@@ -1,0 +1,326 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Saad Ali Khan · Electrical Engineer</title>
+<meta name="description" content="Saad Ali Khan, electrical engineer and M.Sc. student at OVGU Magdeburg. Low-voltage installation, testing, commissioning and quality control.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0b0c0e; --bg2:#121418; --line:#24272d; --text:#eceae4; --muted:#8c8f96;
+  --accent:#d9ff3f; --accent-dim:rgba(217,255,63,.12);
+  --sans:"Inter Tight",system-ui,-apple-system,Segoe UI,Roboto,sans-serif;
+  --mono:"JetBrains Mono",ui-monospace,Consolas,monospace;
+  --pad:clamp(16px,5vw,64px);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--text);font-family:var(--sans);font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+::selection{background:var(--accent);color:#000}
+
+/* nav */
+nav{position:fixed;inset:0 0 auto 0;z-index:20;display:flex;justify-content:space-between;align-items:center;padding:16px var(--pad);background:rgba(11,12,14,.72);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid rgba(36,39,45,.6);font-family:var(--mono);font-size:13px}
+nav .logo{font-weight:500;letter-spacing:.02em}
+nav .logo b{color:var(--accent);font-weight:500}
+nav ul{display:flex;gap:28px;list-style:none}
+nav ul a{color:var(--muted);transition:color .2s}
+nav ul a:hover{color:var(--text)}
+@media(max-width:700px){nav ul{display:none}}
+
+/* hero */
+header{min-height:100svh;display:flex;flex-direction:column;justify-content:center;padding:120px var(--pad) 60px;position:relative}
+.eyebrow{font-family:var(--mono);font-size:13px;color:var(--accent);letter-spacing:.08em;text-transform:uppercase;display:flex;align-items:center;gap:10px}
+.eyebrow::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--accent);box-shadow:0 0 0 0 var(--accent);animation:pulse 2.2s infinite}
+@keyframes pulse{0%{box-shadow:0 0 0 0 rgba(217,255,63,.6)}70%{box-shadow:0 0 0 10px rgba(217,255,63,0)}100%{box-shadow:0 0 0 0 rgba(217,255,63,0)}}
+h1{font-size:clamp(44px,9vw,128px);line-height:.95;font-weight:600;letter-spacing:-.04em;margin:22px 0 26px}
+h1 .line{display:block;overflow:hidden}
+h1 .line span{display:inline-block;transform:translateY(105%);animation:rise 1s cubic-bezier(.2,.8,.2,1) forwards}
+h1 .line:nth-child(2) span{animation-delay:.12s;color:var(--muted)}
+@keyframes rise{to{transform:none}}
+.lead{max-width:640px;font-size:clamp(18px,2vw,22px);color:#c9c7c1;opacity:0;animation:fade 1s .5s forwards}
+.lead em{font-style:normal;color:var(--text);border-bottom:1px solid var(--accent)}
+@keyframes fade{to{opacity:1}}
+.cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:36px;opacity:0;animation:fade 1s .75s forwards}
+.btn{font-family:var(--mono);font-size:14px;padding:13px 20px;border:1px solid var(--line);border-radius:999px;transition:all .25s;display:inline-flex;align-items:center;gap:8px}
+.btn:hover{border-color:var(--text)}
+.btn.primary{background:var(--accent);color:#000;border-color:var(--accent)}
+.btn.primary:hover{background:transparent;color:var(--accent)}
+.meta{display:flex;flex-wrap:wrap;gap:8px 28px;margin-top:56px;font-family:var(--mono);font-size:13px;color:var(--muted);opacity:0;animation:fade 1s .9s forwards}
+.meta span b{color:var(--text);font-weight:400}
+#wave{position:absolute;left:0;right:0;bottom:0;width:100%;height:180px;pointer-events:none;opacity:.9}
+
+/* sections */
+section{padding:110px var(--pad);border-top:1px solid var(--line)}
+.sec-head{display:grid;grid-template-columns:200px 1fr;gap:24px;margin-bottom:48px}
+.sec-num{font-family:var(--mono);font-size:13px;color:var(--muted)}
+.sec-title{font-size:clamp(30px,4.5vw,52px);font-weight:600;letter-spacing:-.03em;line-height:1.05}
+@media(max-width:800px){.sec-head{grid-template-columns:1fr;gap:8px}}
+.body{margin-left:224px;max-width:900px}
+@media(max-width:800px){.body{margin-left:0}}
+
+.about p{font-size:clamp(19px,2.2vw,24px);line-height:1.5;color:#d4d2cc;margin-bottom:22px;max-width:820px}
+.about p .hl{color:var(--accent)}
+.facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:1px;background:var(--line);border:1px solid var(--line);margin-top:44px}
+.fact{background:var(--bg);padding:22px}
+.fact .n{font-size:40px;font-weight:600;letter-spacing:-.03em}
+.fact .n i{font-style:normal;color:var(--accent)}
+.fact .l{font-family:var(--mono);font-size:12px;color:var(--muted);text-transform:uppercase;letter-spacing:.06em}
+
+/* experience */
+.job{display:grid;grid-template-columns:200px 1fr;gap:24px;padding:34px 0;border-bottom:1px solid var(--line)}
+.job:first-child{padding-top:0}
+.job .when{font-family:var(--mono);font-size:13px;color:var(--muted);padding-top:6px}
+.job h3{font-size:24px;font-weight:600;letter-spacing:-.02em}
+.job .org{color:var(--muted);margin-bottom:14px}
+.job ul{list-style:none}
+.job li{position:relative;padding-left:22px;margin:7px 0;color:#cfcdc7}
+.job li::before{content:"";position:absolute;left:0;top:.75em;width:10px;height:1px;background:var(--accent)}
+.tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:16px}
+.tag{font-family:var(--mono);font-size:11.5px;padding:4px 10px;border:1px solid var(--line);border-radius:999px;color:var(--muted)}
+@media(max-width:800px){.job{grid-template-columns:1fr;gap:6px}}
+
+/* projects */
+.projects{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:20px}
+.card{background:var(--bg2);border:1px solid var(--line);border-radius:18px;overflow:hidden;transition:transform .4s cubic-bezier(.2,.8,.2,1),border-color .3s;display:flex;flex-direction:column}
+.card:hover{transform:translateY(-6px);border-color:#3a3e46}
+.shot{aspect-ratio:16/10;background:
+  linear-gradient(var(--bg2),var(--bg2)) padding-box,
+  repeating-linear-gradient(0deg,transparent 0 23px,#1b1e23 23px 24px),
+  repeating-linear-gradient(90deg,transparent 0 23px,#1b1e23 23px 24px);
+  background-blend-mode:normal;position:relative;display:grid;place-items:center;border-bottom:1px solid var(--line)}
+.shot{background:repeating-linear-gradient(0deg,transparent 0 23px,#1a1d22 23px 24px),repeating-linear-gradient(90deg,transparent 0 23px,#1a1d22 23px 24px),var(--bg2)}
+.shot svg{width:72%;height:auto}
+.shot .ph{position:absolute;bottom:10px;right:12px;font-family:var(--mono);font-size:11px;color:#565a62}
+.card .c{padding:22px 22px 24px;display:flex;flex-direction:column;gap:10px;flex:1}
+.status{font-family:var(--mono);font-size:11.5px;display:inline-flex;align-items:center;gap:7px;color:var(--muted)}
+.status::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--accent)}
+.status.wip::before{background:#ffb547}
+.card h3{font-size:21px;font-weight:600;letter-spacing:-.02em;line-height:1.25}
+.card p{color:#bdbbb5;font-size:15.5px}
+.card .tags{margin-top:auto;padding-top:8px}
+
+/* skills */
+.skills{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:36px}
+.skills h4{font-family:var(--mono);font-size:12px;font-weight:400;color:var(--accent);text-transform:uppercase;letter-spacing:.08em;margin-bottom:14px}
+.skills ul{list-style:none}
+.skills li{padding:9px 0;border-bottom:1px solid var(--line);color:#d4d2cc}
+
+/* education */
+.edu{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:20px}
+.edu div{border:1px solid var(--line);border-radius:18px;padding:26px}
+.edu .when{font-family:var(--mono);font-size:13px;color:var(--muted)}
+.edu h3{font-size:22px;font-weight:600;letter-spacing:-.02em;margin:8px 0 4px}
+.edu p{color:#bdbbb5}
+
+/* contact */
+.contact{text-align:left}
+.contact h2{font-size:clamp(40px,8vw,110px);line-height:.95;letter-spacing:-.045em;font-weight:600;max-width:1100px}
+.contact h2 a{display:inline-block;margin-top:14px;font-size:clamp(20px,3.6vw,46px);letter-spacing:-.02em;overflow-wrap:anywhere;color:var(--accent);background:linear-gradient(var(--accent),var(--accent)) 0 100%/0 2px no-repeat;transition:background-size .4s}
+.contact h2 a:hover{background-size:100% 2px}
+.links{display:flex;flex-wrap:wrap;gap:12px;margin-top:40px}
+footer{padding:28px var(--pad);border-top:1px solid var(--line);display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;font-family:var(--mono);font-size:12px;color:var(--muted)}
+
+/* reveal */
+.js .rv{opacity:0;transform:translateY(28px);transition:opacity .9s cubic-bezier(.2,.8,.2,1),transform .9s cubic-bezier(.2,.8,.2,1)}
+.js .rv.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}h1 .line span,.lead,.cta,.meta{transform:none;opacity:1}.rv{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="#top" class="logo">saad<b>.</b>ali<b>.</b>khan</a>
+  <ul>
+    <li><a href="#about">About</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<header id="top">
+  <div class="eyebrow">Open to internships &amp; working student roles</div>
+  <h1><span class="line"><span>Saad Ali Khan</span></span><span class="line"><span>Electrical Engineer</span></span></h1>
+  <p class="lead">I make sure that what gets built matches <em>what was designed</em>. Low-voltage installation, testing, commissioning and quality control, from solar rooftops to LV panels.</p>
+  <div class="cta">
+    <a class="btn primary" href="#projects">See projects →</a>
+    <a class="btn" href="https://www.linkedin.com/in/saadalikhan-ee" target="_blank" rel="noopener">LinkedIn ↗</a>
+    <a class="btn" href="mailto:saadalikhan12399@gmail.com">Email</a>
+  </div>
+  <div class="meta">
+    <span>Based in <b>Magdeburg, DE</b></span>
+    <span>Studying <b>M.Sc. EE &amp; IT, OVGU</b></span>
+    <span>Available <b>immediately</b></span>
+    <span>Relocation <b>anywhere in Germany</b></span>
+  </div>
+  <canvas id="wave" aria-hidden="true"></canvas>
+</header>
+
+<section id="about" class="about">
+  <div class="sec-head rv"><div class="sec-num">01 / About</div><div class="sec-title">Hands-on engineer,<br>careful with the details.</div></div>
+  <div class="body">
+    <p class="rv">I spent over a year on solar sites in Karachi installing, testing and commissioning <span class="hl">15+ PV systems</span> from 3 to 50 kWp. I checked each one against its single-line diagram, measured strings, tested protection and earthing, and wrote the reports that closed the job.</p>
+    <p class="rv">Before that I drew panel layouts in AutoCAD and tested LV panels and relay settings at ZIMCO, and built an IoT load management system for my funded bachelor thesis. Now I am doing my master's in Electrical Engineering &amp; IT in Magdeburg, focused on power networks, protection and renewables.</p>
+    <div class="facts rv">
+      <div class="fact"><div class="n">15<i>+</i></div><div class="l">PV systems built</div></div>
+      <div class="fact"><div class="n">100<i>+</i></div><div class="l">Modules &amp; inverters commissioned</div></div>
+      <div class="fact"><div class="n">20<i>+</i></div><div class="l">Site assessments</div></div>
+      <div class="fact"><div class="n">C1</div><div class="l">English · German B1</div></div>
+    </div>
+  </div>
+</section>
+
+<section id="experience">
+  <div class="sec-head rv"><div class="sec-num">02 / Experience</div><div class="sec-title">Where I have worked.</div></div>
+  <div class="body">
+    <div class="job rv">
+      <div class="when">07/2023 – 11/2024</div>
+      <div>
+        <h3>Electrical Trainee Engineer, Photovoltaics</h3>
+        <div class="org">Renewable Systems Pvt. Ltd. · Karachi</div>
+        <ul>
+          <li>Verified 15+ PV systems (3–50 kWp) against single-line diagrams, checking AC/DC distribution boxes, breakers, surge protection and cable sizes</li>
+          <li>Commissioned 100+ modules and inverters by measuring string Voc/Isc and testing polarity, RCDs and breakers before energising</li>
+          <li>Installed and verified earthing and surge protection, measuring earth resistance and protective conductor continuity</li>
+          <li>Led 20+ site assessments and wrote the inspection reports that management used to close open points with installers and suppliers</li>
+        </ul>
+        <div class="tags"><span class="tag">Commissioning</span><span class="tag">LV testing</span><span class="tag">Earthing</span><span class="tag">SLD</span><span class="tag">Reporting</span></div>
+      </div>
+    </div>
+    <div class="job rv">
+      <div class="when">01/2023 – 03/2023</div>
+      <div>
+        <h3>Electrical Engineering Intern</h3>
+        <div class="org">ZIMCO International Corporation · Karachi</div>
+        <ul>
+          <li>Drew schematics, LV panel and motor control centre layouts in AutoCAD for live projects</li>
+          <li>Tested panels, earthing and protection relay settings and wrote the test reports</li>
+          <li>Traced faults in circuits, motors and control systems and documented each fix</li>
+        </ul>
+        <div class="tags"><span class="tag">AutoCAD</span><span class="tag">LV panels / MCC</span><span class="tag">Protection relays</span></div>
+      </div>
+    </div>
+    <div class="job rv">
+      <div class="when">03/2023 – 07/2023</div>
+      <div>
+        <h3>Key Account Manager, Electronics</h3>
+        <div class="org">Alibaba Group · Karachi</div>
+        <ul><li>Dedicated contact for 50+ sellers and brands, following up every issue until it was closed</li></ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="projects">
+  <div class="sec-head rv"><div class="sec-num">03 / Projects</div><div class="sec-title">Things I have built.</div></div>
+  <div class="body" style="max-width:1100px">
+    <div class="projects">
+      <article class="card rv">
+        <div class="shot">
+          <svg viewBox="0 0 240 140" fill="none" stroke="#d9ff3f" stroke-width="1.4"><rect x="20" y="16" width="200" height="108" rx="6" stroke="#3a3e46"/><path d="M20 40h200M20 64h200M20 88h200M80 16v108M150 16v108" stroke="#2a2e35"/><circle cx="190" cy="52" r="5" fill="#d9ff3f" stroke="none"/><circle cx="190" cy="76" r="5" fill="#ff6b5a" stroke="none"/><circle cx="190" cy="100" r="5" fill="#d9ff3f" stroke="none"/><path d="M34 52h34M34 76h28M34 100h38" stroke="#8c8f96"/></svg>
+          <span class="ph">screenshot coming</span>
+        </div>
+        <div class="c">
+          <span class="status">Version 1 done</span>
+          <h3>Electrical QC Inspection Kit</h3>
+          <p>Excel toolkit for checking a 400 V distribution board before energisation: LV panel, earthing and lighting checklists, a test record that flags results outside the limits automatically, NCR log, red-line log and a daily QC report.</p>
+          <div class="tags"><span class="tag">DIN VDE 0100-600</span><span class="tag">Excel</span><span class="tag">QC</span></div>
+        </div>
+      </article>
+      <article class="card rv">
+        <div class="shot">
+          <svg viewBox="0 0 240 140" fill="none" stroke="#8c8f96" stroke-width="1.4"><path d="M120 12v22"/><circle cx="120" cy="44" r="10"/><circle cx="120" cy="58" r="10"/><path d="M120 68v16M60 84h120M60 84v18M100 84v18M140 84v18M180 84v18"/><rect x="52" y="102" width="16" height="12"/><rect x="92" y="102" width="16" height="12"/><rect x="132" y="102" width="16" height="12" stroke="#ff6b5a"/><rect x="172" y="102" width="16" height="12"/><path d="M126 96c10-6 24-6 34 4" stroke="#ff6b5a" stroke-dasharray="3 3"/></svg>
+          <span class="ph">screenshot coming</span>
+        </div>
+        <div class="c">
+          <span class="status wip">In progress</span>
+          <h3>Red-line Review of a 20/0.4 kV Station</h3>
+          <p>Comparing an as-built MV/LV transformer station with its single-line diagram, marking deviations in red in AutoCAD and logging them for the as-built revision.</p>
+          <div class="tags"><span class="tag">AutoCAD</span><span class="tag">MV/LV</span><span class="tag">As-built</span></div>
+        </div>
+      </article>
+      <article class="card rv">
+        <div class="shot">
+          <svg viewBox="0 0 240 140" fill="none" stroke-width="1.6"><path d="M20 110 L50 96 L80 102 L110 70 L140 78 L170 40 L200 56 L220 30" stroke="#d9ff3f"/><path d="M20 70h200" stroke="#ff6b5a" stroke-dasharray="4 4"/><circle cx="170" cy="40" r="4" fill="#ff6b5a"/><path d="M20 124h200" stroke="#3a3e46"/></svg>
+          <span class="ph">screenshot coming</span>
+        </div>
+        <div class="c">
+          <span class="status">Bachelor thesis · funded</span>
+          <h3>IoT Load Management System</h3>
+          <p>Real-time monitoring and control of electrical loads with anomaly detection, threshold alerts and remote load switching through a web portal and mobile app. Funded by the Ignite National Technology Fund.</p>
+          <div class="tags"><span class="tag">IoT</span><span class="tag">Energy data</span><span class="tag">2022–2023</span></div>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="skills">
+  <div class="sec-head rv"><div class="sec-num">04 / Skills</div><div class="sec-title">Toolbox.</div></div>
+  <div class="body skills">
+    <div class="rv"><h4>Technical</h4><ul><li>LV installation testing &amp; commissioning</li><li>Earthing &amp; surge protection</li><li>LV panels / MCC</li><li>Single-line &amp; wiring diagrams</li><li>Inspection &amp; QC reporting</li></ul></div>
+    <div class="rv"><h4>Software</h4><ul><li>AutoCAD</li><li>ETAP</li><li>MATLAB / Simulink</li><li>Proteus · Multisim</li><li>Excel</li></ul></div>
+    <div class="rv"><h4>Languages</h4><ul><li>English · C1</li><li>German · B1, improving</li><li>Urdu / Hindi · native</li></ul></div>
+  </div>
+</section>
+
+<section id="education">
+  <div class="sec-head rv"><div class="sec-num">05 / Education</div><div class="sec-title">Study.</div></div>
+  <div class="body edu">
+    <div class="rv"><div class="when">11/2024 – expected 09/2027</div><h3>M.Sc. Electrical Engineering &amp; IT</h3><p>Otto-von-Guericke-Universität Magdeburg. Focus: renewable energy, power electronics, power network planning, digital protection.</p></div>
+    <div class="rv"><div class="when">01/2019 – 03/2023</div><h3>B.Sc. Electrical Engineering</h3><p>Sir Syed University of Engineering and Technology, Karachi.</p></div>
+  </div>
+</section>
+
+<section id="contact" class="contact">
+  <div class="sec-head rv"><div class="sec-num">06 / Contact</div><div></div></div>
+  <h2 class="rv">Let's talk.<br><a href="mailto:saadalikhan12399@gmail.com">saadalikhan12399@gmail.com</a></h2>
+  <div class="links rv">
+    <a class="btn primary" href="https://www.linkedin.com/in/saadalikhan-ee" target="_blank" rel="noopener">LinkedIn ↗</a>
+    <a class="btn" href="https://github.com/saadalikhan-ee" target="_blank" rel="noopener">GitHub ↗</a>
+  </div>
+</section>
+
+<footer><span>© 2026 Saad Ali Khan</span><span>Magdeburg, Germany</span></footer>
+
+<script>
+// scroll reveal (content stays visible if anything here fails)
+const rvs = document.querySelectorAll('.rv');
+if ('IntersectionObserver' in window) {
+  document.documentElement.classList.add('js');
+  const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } }), { threshold: .08 });
+  rvs.forEach((el, i) => { el.style.transitionDelay = (i % 4) * 70 + 'ms'; io.observe(el); });
+  setTimeout(() => rvs.forEach(el => { const r = el.getBoundingClientRect(); if (r.top < innerHeight) el.classList.add('in'); }), 1500);
+}
+
+// animated signal line in hero (sine + harmonics, like a scope trace)
+const c = document.getElementById('wave'), x = c.getContext('2d');
+const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+function size(){ const r = devicePixelRatio || 1; c.width = c.clientWidth * r; c.height = c.clientHeight * r; x.setTransform(r,0,0,r,0,0); }
+size(); addEventListener('resize', size);
+let t = 0;
+function draw(){
+  const w = c.clientWidth, h = c.clientHeight, mid = h * .55;
+  x.clearRect(0,0,w,h);
+  const traces = [ { a:.28, f:1, s:1, col:'rgba(217,255,63,.9)', lw:1.6 }, { a:.18, f:2, s:-.7, col:'rgba(140,143,150,.35)', lw:1 }, { a:.12, f:3, s:1.3, col:'rgba(140,143,150,.2)', lw:1 } ];
+  for (const tr of traces){
+    x.beginPath(); x.lineWidth = tr.lw; x.strokeStyle = tr.col;
+    for (let px = 0; px <= w; px += 3){
+      const k = px / w * Math.PI * 4 * tr.f;
+      const env = Math.sin(px / w * Math.PI);
+      const y = mid + Math.sin(k + t * tr.s) * h * tr.a * env;
+      px ? x.lineTo(px, y) : x.moveTo(px, y);
+    }
+    x.stroke();
+  }
+  t += .018;
+  if (!reduce) requestAnimationFrame(draw);
+}
+draw();
+</script>
+</body>
+</html>
